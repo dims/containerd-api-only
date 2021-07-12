@@ -14,5 +14,4 @@
    limitations under the License.
 */
 
-// Package events defines the ttrpc event service.
-package events
+package containers

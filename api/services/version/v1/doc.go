@@ -14,5 +14,5 @@
    limitations under the License.
 */
 
-// Package events defines the ttrpc event service.
-package events
+// Package version defines the version service.
+package version

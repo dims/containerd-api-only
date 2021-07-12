@@ -14,5 +14,15 @@
    limitations under the License.
 */
 
-// Package events defines the ttrpc event service.
-package events
+package fieldpath
+
+import (
+	"github.com/containerd/containerd/protobuf/plugin"
+	"github.com/gogo/protobuf/proto"
+	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
+)
+
+// Enabled returns true if E_Fieldpath is enabled
+func Enabled(file *descriptor.FileDescriptorProto, message *descriptor.DescriptorProto) bool {
+	return proto.GetBoolExtension(message.Options, plugin.E_Fieldpath, proto.GetBoolExtension(file.Options, plugin.E_FieldpathAll, false))
+}
